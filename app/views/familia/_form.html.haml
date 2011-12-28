@@ -1,0 +1,91 @@
+= form_for @familium do |f|
+  -if @familium.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@familium.errors.count, "error")} prohibited this familium from being saved:"
+      %ul
+        - @familium.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nis
+    = f.text_field :nis
+  .field
+    = f.label :data_cadastro
+    = f.date_select :data_cadastro
+  .field
+    = f.label :logradouro
+    = f.text_field :logradouro
+  .field
+    = f.label :numero
+    = f.text_field :numero
+  .field
+    = f.label :complemento
+    = f.text_field :complemento
+  .field
+    = f.label :bairro
+    = f.text_field :bairro
+  .field
+    = f.label :municipio
+    = f.text_field :municipio
+  .field
+    = f.label :cep
+    = f.text_field :cep
+  .field
+    = f.label :telefone
+    = f.text_field :telefone
+  .field
+    = f.label :tipo_telefone
+    = f.text_field :tipo_telefone
+  .field
+    = f.label :tempo_residencia_municipio
+    = f.number_field :tempo_residencia_municipio
+  .field
+    = f.label :tempo_residencia_casa
+    = f.number_field :tempo_residencia_casa
+  .field
+    = f.label :forma_ocupacao
+    = f.text_field :forma_ocupacao
+  .field
+    = f.label :grau_risco
+    = f.number_field :grau_risco
+  .field
+    = f.label :caracteristica_casa
+    = f.text_field :caracteristica_casa
+  .field
+    = f.label :total_comodos
+    = f.number_field :total_comodos, :collection => 0..10
+  .field
+    = f.label :abastecimento_agua
+    = f.text_field :abastecimento_agua, :priority => [ "Rede" ], :collection => [ "Australia", "Brazil", "New Zealand"]
+  .field
+    = f.label :acondicionamento_agua
+    = f.text_field :acondicionamento_agua
+  .field
+    = f.label :qualidade_agua
+    = f.text_field :qualidade_agua
+  .field
+    = f.label :esgotamento_sanitario
+    = f.text_field :esgotamento_sanitario
+  .field
+    = f.label :instalacoes_sanitarias
+    = f.text_field :instalacoes_sanitarias
+  .field
+    = f.label :vaso
+    = f.number_field :vaso
+  .field
+    = f.label :pia
+    = f.number_field :pia
+  .field
+    = f.label :chuveiro
+    = f.number_field :chuveiro
+  .field
+    = f.label :energia_eletrica
+    = f.text_field :energia_eletrica
+  .field
+    = f.label :destinacao_lixo
+    = f.text_field :destinacao_lixo
+  .field
+    = f.label :ativo
+    = f.number_field :ativo
+  .actions
+    = f.submit 'Save'

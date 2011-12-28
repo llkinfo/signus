@@ -1,0 +1,42 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "Listar")}", unidades_path
+      %li= link_to "#{t("web-app-theme.new", :default => "Novo")}", new_unidade_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Mostrar")}", unidade_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.unidade.nome", :default => t("activerecord.labels.nome", :default => "Nome"))
+          \:
+        = @unidade.nome
+      %p
+        %b
+          = t("activerecord.attributes.unidade.endereco", :default => t("activerecord.labels.endereco", :default => "Endereco"))
+          \:
+        = @unidade.endereco
+      %p
+        %b
+          = t("activerecord.attributes.unidade.bairro", :default => t("activerecord.labels.bairro", :default => "Bairro"))
+          \:
+        = @unidade.bairro
+      %p
+        %b
+          = t("activerecord.attributes.unidade.telefone", :default => t("activerecord.labels.telefone", :default => "Telefone"))
+          \:
+        = @unidade.telefone
+      %p
+        %b
+          = t("activerecord.attributes.unidade.email", :default => t("activerecord.labels.email", :default => "Email"))
+          \:
+        = @unidade.email
+      %p
+        %b
+          = t("activerecord.attributes.unidade.responsavel", :default => t("activerecord.labels.responsavel", :default => "Responsavel"))
+          \:
+        = @unidade.responsavel
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Editar")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_unidade_path(@unidade), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Excluir")}") + " " + t("web-app-theme.delete", :default => "Delete"), unidade_path(@unidade), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

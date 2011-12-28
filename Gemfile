@@ -31,3 +31,19 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
+gem 'haml'
+gem 'devise'
+gem 'kaminari'
+gem 'execjs'
+gem 'therubyracer'
+gem 'mongrel'
+gem 'simple_form'
+ 
+group :development, :test do
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'haml-rails'
+  gem 'hpricot'
+  gem 'ruby_parser'
+  gem 'web-app-theme', '~> 0.8.0'
+end

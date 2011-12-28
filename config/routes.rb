@@ -1,4 +1,16 @@
 Signus::Application.routes.draw do
+  resources :familia
+
+  resources :unidades
+
+  resources :bairros
+
+  resources :municipios
+
+  devise_for :users
+
+  root :to => "home#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

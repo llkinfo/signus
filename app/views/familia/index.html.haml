@@ -1,0 +1,71 @@
+%h1 Listing familia
+
+%table
+  %tr
+    %th Nis
+    %th Data cadastro
+    %th Logradouro
+    %th Numero
+    %th Complemento
+    %th Bairro
+    %th Municipio
+    %th Cep
+    %th Telefone
+    %th Tipo telefone
+    %th Tempo residencia municipio
+    %th Tempo residencia casa
+    %th Forma ocupacao
+    %th Grau risco
+    %th Caracteristica casa
+    %th Total comodos
+    %th Abastecimento agua
+    %th Acondicionamento agua
+    %th Qualidade agua
+    %th Esgotamento sanitario
+    %th Instalacoes sanitarias
+    %th Vaso
+    %th Pia
+    %th Chuveiro
+    %th Energia eletrica
+    %th Destinacao lixo
+    %th Ativo
+    %th
+    %th
+    %th
+
+  - @familia.each do |familium|
+    %tr
+      %td= familium.nis
+      %td= familium.data_cadastro
+      %td= familium.logradouro
+      %td= familium.numero
+      %td= familium.complemento
+      %td= familium.bairro
+      %td= familium.municipio
+      %td= familium.cep
+      %td= familium.telefone
+      %td= familium.tipo_telefone
+      %td= familium.tempo_residencia_municipio
+      %td= familium.tempo_residencia_casa
+      %td= familium.forma_ocupacao
+      %td= familium.grau_risco
+      %td= familium.caracteristica_casa
+      %td= familium.total_comodos
+      %td= familium.abastecimento_agua
+      %td= familium.acondicionamento_agua
+      %td= familium.qualidade_agua
+      %td= familium.esgotamento_sanitario
+      %td= familium.instalacoes_sanitarias
+      %td= familium.vaso
+      %td= familium.pia
+      %td= familium.chuveiro
+      %td= familium.energia_eletrica
+      %td= familium.destinacao_lixo
+      %td= familium.ativo
+      %td= link_to 'Show', familium
+      %td= link_to 'Edit', edit_familium_path(familium)
+      %td= link_to 'Destroy', familium, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Familium', new_familium_path

@@ -1,0 +1,33 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "Listar")}", unidades_path
+      %li= link_to "#{t("web-app-theme.new", :default => "Novo")}", new_unidade_path
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "Todas as")
+      Unidades
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+            = t("activerecord.attributes.unidade.nome", :default => t("activerecord.labels.nome", :default => "Nome"))
+          %th= t("web-app-theme.created_at", :default => "Criado em")
+          %th.last &nbsp;
+        - @unidades.each do |unidade|
+          %tr{:class => cycle("odd", "even")}
+            %td
+              = unidade.id
+            %td
+              = link_to unidade.nome, unidade_path(unidade)
+            %td
+              = unidade.created_at
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Mostrar")}", unidade_path(unidade)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Editar")}", edit_unidade_path(unidade)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Excluir")}", unidade_path(unidade), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+      .actions-bar.wat-cf
+        .actions
+- content_for :sidebar, render(:partial => 'sidebar')
